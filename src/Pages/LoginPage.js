@@ -13,15 +13,20 @@ function LoginPage() {
     e.preventDefault();
     if (!emailRegex.test(email)) {
       toast("Please enter a valid email address");
+      return;
+    }
+    if (password.length < 6){
+      toast("password must be at least 6 character");
+      return;
     }
   };
   console.log(email);
 
   return (
     <div className="container mx-auto flex p-10 h-screen justify-center items-center max-md:px-4 max-sm:p-0">
-      <div className="conatiner mx-auto flex shadow-lg bg-blue-900 rounded-3xl w-[60%] overflow-hidden items-center justify-center max-md:w-full">
+      <div className="conatiner mx-auto flex shadow-lg bg-primary rounded-3xl w-[60%] overflow-hidden items-center justify-center max-md:w-full">
         <AccountingComponents />
-        <div className=" px-10 py-16 rounded-l-3xl bg-white w-1/2 max-lg:w-full  max-md:px-4">
+        <div className=" px-10 py-16 rounded-l-3xl bg-white w-1/2 max-lg:w-full  max-md:px-4 font-inter">
           <h2 className="text-3xl font-bold">Log In</h2>
           <p className="mt-2 text-sm">
             Good to see you again! Let's get back to managing smarter.
@@ -48,7 +53,7 @@ function LoginPage() {
                   placeholder="Enter your password"
                   className="border border-gray-300 rounded-md p-2 w-full mb-1"
                 />
-                <Link to="/forgot" className="text-blue-500 text-sm ">
+                <Link to="/forgot" className="text-secondary text-sm ">
                   forgot password
                 </Link>
               </div>
@@ -58,7 +63,7 @@ function LoginPage() {
               <button
                 type="submit"
                 onClick={handleSubmit}
-                className="w-full py-2 border rounded-md bg-blue-600"
+                className="w-full py-2 border rounded-md bg-secondary"
               >
                 {" "}
                 Log in{" "}
@@ -67,7 +72,7 @@ function LoginPage() {
               <p className="mt-2">
                 Don't have an account ?{" "}
                 
-                <Link to="/signup" className="text-blue-500 text-sm">
+                <Link to="/signup" className="text-secondary text-sm">
                   {" "}
                   Sign up
                 </Link>
