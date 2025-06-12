@@ -3,16 +3,19 @@ import { useState } from "react";
 import { emailRegex } from "../Regex/Regex";
 import { ToastContainer, toast } from "react-toastify";
 import Button from "../Components/Button";
+import { useNavigate } from "react-router"
 
 
 function ForgotPage(){
   const [email, setEmail] = useState("");
 
+  const navigate = useNavigate("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!emailRegex.test(email)) {
       toast("Please enter a valid email address");
-    } else {
+    } else {navigate("verify");
       toast.success("Verification code sent to your email");
     }
   };

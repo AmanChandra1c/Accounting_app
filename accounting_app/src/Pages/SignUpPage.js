@@ -31,14 +31,17 @@ function SignUpPage() {
     function handleClickCheck(e) {
       if (!emailRegex.test(email)) {
         toast("Please enter a valid email address");
+        e.target.checked = false;
         return;
       }
       if (password.length < 6 || confirmPassword.length < 6) {
         toast("password must be at least 6 character");
+        e.target.checked = false;
         return;
       }
       if (password !== confirmPassword) {
         toast("Password do not match");
+        e.target.checked = false;
         return;
       }
       if(e.target.checked === true){

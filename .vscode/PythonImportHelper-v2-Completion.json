@@ -1,0 +1,220 @@
+[
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "create_user",
+        "importPath": "database.db",
+        "description": "database.db",
+        "isExtraImport": true,
+        "detail": "database.db",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "psycopg2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "psycopg2",
+        "description": "psycopg2",
+        "detail": "psycopg2",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "config.config",
+        "description": "config.config",
+        "isExtraImport": true,
+        "detail": "config.config",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "importPath": "api.user.user",
+        "description": "api.user.user",
+        "isExtraImport": true,
+        "detail": "api.user.user",
+        "documentation": {}
+    },
+    {
+        "label": "_Known",
+        "kind": 6,
+        "importPath": "accounting_app.node_modules.flatted.python.flatted",
+        "description": "accounting_app.node_modules.flatted.python.flatted",
+        "peekOfCode": "class _Known:\n    def __init__(self):\n        self.key = []\n        self.value = []\nclass _String:\n    def __init__(self, value):\n        self.value = value\ndef _array_keys(value):\n    keys = []\n    i = 0",
+        "detail": "accounting_app.node_modules.flatted.python.flatted",
+        "documentation": {}
+    },
+    {
+        "label": "_String",
+        "kind": 6,
+        "importPath": "accounting_app.node_modules.flatted.python.flatted",
+        "description": "accounting_app.node_modules.flatted.python.flatted",
+        "peekOfCode": "class _String:\n    def __init__(self, value):\n        self.value = value\ndef _array_keys(value):\n    keys = []\n    i = 0\n    for _ in value:\n        keys.append(i)\n        i += 1\n    return keys",
+        "detail": "accounting_app.node_modules.flatted.python.flatted",
+        "documentation": {}
+    },
+    {
+        "label": "parse",
+        "kind": 2,
+        "importPath": "accounting_app.node_modules.flatted.python.flatted",
+        "description": "accounting_app.node_modules.flatted.python.flatted",
+        "peekOfCode": "def parse(value, *args, **kwargs):\n    json = _json.loads(value, *args, **kwargs)\n    wrapped = []\n    for value in json:\n        wrapped.append(_wrap(value))\n    input = []\n    for value in wrapped:\n        if isinstance(value, _String):\n            input.append(value.value)\n        else:",
+        "detail": "accounting_app.node_modules.flatted.python.flatted",
+        "documentation": {}
+    },
+    {
+        "label": "stringify",
+        "kind": 2,
+        "importPath": "accounting_app.node_modules.flatted.python.flatted",
+        "description": "accounting_app.node_modules.flatted.python.flatted",
+        "peekOfCode": "def stringify(value, *args, **kwargs):\n    known = _Known()\n    input = []\n    output = []\n    i = int(_index(known, input, value))\n    while i < len(input):\n        output.append(_transform(known, input, input[i]))\n        i += 1\n    return _json.dumps(output, *args, **kwargs)",
+        "detail": "accounting_app.node_modules.flatted.python.flatted",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 6,
+        "importPath": "accounting_app_server.APP.api.user.user",
+        "description": "accounting_app_server.APP.api.user.user",
+        "peekOfCode": "class User(BaseModel):\n    name: str\n    email: str\n    password: str\n    contact: int\n    password: str\n    country: str\n    AccountType: str\n@router.post(\"/signup\")\nasync def signup(user: User):",
+        "detail": "accounting_app_server.APP.api.user.user",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "accounting_app_server.APP.api.user.user",
+        "description": "accounting_app_server.APP.api.user.user",
+        "peekOfCode": "router = APIRouter()\nclass User(BaseModel):\n    name: str\n    email: str\n    password: str\n    contact: int\n    password: str\n    country: str\n    AccountType: str\n@router.post(\"/signup\")",
+        "detail": "accounting_app_server.APP.api.user.user",
+        "documentation": {}
+    },
+    {
+        "label": "Settings",
+        "kind": 6,
+        "importPath": "accounting_app_server.APP.config.config",
+        "description": "accounting_app_server.APP.config.config",
+        "peekOfCode": "class Settings:\n    PROJECT_NAME:str = \"Accounting app\"\n    PROJECT_VERSION:str = \"1.0.0\"\nsettings = Settings()",
+        "detail": "accounting_app_server.APP.config.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "kind": 5,
+        "importPath": "accounting_app_server.APP.config.config",
+        "description": "accounting_app_server.APP.config.config",
+        "peekOfCode": "settings = Settings()",
+        "detail": "accounting_app_server.APP.config.config",
+        "documentation": {}
+    },
+    {
+        "label": "create_user",
+        "kind": 2,
+        "importPath": "accounting_app_server.APP.database.db",
+        "description": "accounting_app_server.APP.database.db",
+        "peekOfCode": "def create_user(name, email, password, contact, country, account_type):\n    try:\n        conn = psycopg2.connect(DATA_BASE_URL)\n        cur = conn.cursor()\n        cur.execute(\"\"\"\n            INSERT INTO \"user\" (name, email, password, contact, country, account_type)\n            VALUES (%s, %s, %s, %s, %s, %s);\n        \"\"\", (name, email, password, contact, country, account_type))\n        conn.commit()\n    except psycopg2.Error as e:",
+        "detail": "accounting_app_server.APP.database.db",
+        "documentation": {}
+    },
+    {
+        "label": "create_user_table",
+        "kind": 2,
+        "importPath": "accounting_app_server.APP.database.db",
+        "description": "accounting_app_server.APP.database.db",
+        "peekOfCode": "def create_user_table():\n    try:\n        conn = psycopg2.connect(DATA_BASE_URL)\n        print(\"Connected successfully\")\n        cur = conn.cursor()\n        cur.execute(\"\"\"\n            CREATE TABLE \"user\" (\n                id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n                name VARCHAR(50),\n                email VARCHAR(50) UNIQUE,",
+        "detail": "accounting_app_server.APP.database.db",
+        "documentation": {}
+    },
+    {
+        "label": "DATA_BASE_URL",
+        "kind": 5,
+        "importPath": "accounting_app_server.APP.database.db",
+        "description": "accounting_app_server.APP.database.db",
+        "peekOfCode": "DATA_BASE_URL = os.getenv(\"DATA_BASE_URL\")\ndef create_user(name, email, password, contact, country, account_type):\n    try:\n        conn = psycopg2.connect(DATA_BASE_URL)\n        cur = conn.cursor()\n        cur.execute(\"\"\"\n            INSERT INTO \"user\" (name, email, password, contact, country, account_type)\n            VALUES (%s, %s, %s, %s, %s, %s);\n        \"\"\", (name, email, password, contact, country, account_type))\n        conn.commit()",
+        "detail": "accounting_app_server.APP.database.db",
+        "documentation": {}
+    },
+    {
+        "label": "include_router",
+        "kind": 2,
+        "importPath": "accounting_app_server.APP.main",
+        "description": "accounting_app_server.APP.main",
+        "peekOfCode": "def include_router(app):\n    app.include_router(router)\ndef start_app():\n    app = FastAPI(title= settings.PROJECT_NAME, version=settings.PROJECT_VERSION)\n    include_router(app)\n    return app\napp = start_app()",
+        "detail": "accounting_app_server.APP.main",
+        "documentation": {}
+    },
+    {
+        "label": "start_app",
+        "kind": 2,
+        "importPath": "accounting_app_server.APP.main",
+        "description": "accounting_app_server.APP.main",
+        "peekOfCode": "def start_app():\n    app = FastAPI(title= settings.PROJECT_NAME, version=settings.PROJECT_VERSION)\n    include_router(app)\n    return app\napp = start_app()",
+        "detail": "accounting_app_server.APP.main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "accounting_app_server.APP.main",
+        "description": "accounting_app_server.APP.main",
+        "peekOfCode": "app = start_app()",
+        "detail": "accounting_app_server.APP.main",
+        "documentation": {}
+    }
+]

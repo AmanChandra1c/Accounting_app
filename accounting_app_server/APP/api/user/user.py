@@ -1,16 +1,32 @@
 from fastapi import APIRouter
-from database.db import create_user_table, create_user
+from pydantic import BaseModel
+from database.db import create_user
 
 router = APIRouter()
 
-@router.get("/")
-def hello():
-    print("Hey")
-    create_user_table()
-    return{"message" : "hello from /"}
+class User(BaseModel):
+    name: str
+    email: str
+    password: str
+    contact: int
+    password: str
+    country: str
+    AccountType: str
 
-@router.get("/user")
-def createuser():
-    create_user(1, "Aman", "aman@example.com", 25, "Male")
-    create_user(2, "Sara", "sara@example.com", 28, "Female")
-    return("user Created")
+@router.post("/signup")
+async def signup(user: User):
+    try:
+
+        
+
+        create_user(
+            name=user.name,
+            email=user.email,
+            password=user.password,
+            contact=user.contact,
+            country=user.country,
+            account_type=user.AccountType
+        )
+        return {"message": "User created successfully"}
+    except Exception as e:
+        return {"error": str(e)}
