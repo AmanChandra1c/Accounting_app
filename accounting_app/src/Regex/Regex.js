@@ -1,0 +1,16 @@
+export const onlySingleString = new RegExp(/^[a-zA-Z]+[a-zA-Z]+$/);
+export const emailRegex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
+export const phoneNumberRegexIndia = new RegExp(/^[0-9]{10}$/);
+export const phoneNumberRegexUsd = new RegExp(/^[0-9]{10}$/);
+export const phoneNumberRegexAed = new RegExp(/^[0-9]{7}$/);
+export const aadharNumberRegex = new RegExp(/^[0-9]{12}$/);
+export const addressRegex = new RegExp(/ \d{1,5}\s\w.\s(\b\w*\b\s){1,2}\w*\./);
+export const StringWithSpace = new RegExp(/^[a-zA-Z]+.[a-zA-Z ]+$/);
+export const PercentRegex = new RegExp(/(^100([.]0{1,2})?)$|(^\d{1,2}([.]\d{1,2})?)$/);
+export const zipCodeRegex = new RegExp(/^[0-9]{6}$/);
+export const sessionRegex = new RegExp(/^(20[0-9]\d|20[0-9]\d|2050)$/);
+export const passwordRegex = new RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/);
+export const dateOfBirthRegex = /\d{4}-\d{2}-\d{2}/;
+export const DesimalValue = /^\d*\.?\d*$/;
+export const wholeNumberRegex = new RegExp(/^\d{1,10}$|(?=^.{1,10}$)^\d+\$/);
+export const integetRegex = new RegExp(/^[1-9]\d*$/);
